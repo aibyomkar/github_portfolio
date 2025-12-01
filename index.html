@@ -1,76 +1,189 @@
-<!DOCTYPE html>
-<article class="project-card">
-<h3>3) NLP Summarizer + Explainability</h3>
-<p>Transformer-based summarizer with LIME/SHAP explanations and a Streamlit demo for user-testing.</p>
-<div class="card-footer">
-<a href="#" target="_blank">Code</a>
-<a href="#" target="_blank">Demo</a>
-</div>
-</article>
-</div>
-</div>
-</section>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Omkar Potdar — AI Engineer</title>
+  <meta name="description" content="Omkar Potdar — AI Engineer. Projects, skills, certificates and contact." />
 
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-row">
+      <a class="brand" href="#home">Omkar <span>Potdar</span></a>
 
-<!-- SKILLS -->
-<section id="skills" class="section">
-<div class="container">
-<h2>Skills</h2>
-<p class="section-sub">Technologies, frameworks and tools I use regularly.</p>
+      <nav class="nav" aria-label="Primary">
+        <a href="#home">Home</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#certificates">Certificates</a>
+      </nav>
 
+      <div class="header-actions">
+        <button id="themeToggle" title="Toggle theme">🌙</button>
+        <a class="btn small" id="downloadResume" href="#">Resume</a>
+        <button class="menu-toggle" aria-label="Open menu">☰</button>
+      </div>
+    </div>
+  </header>
 
-<ul class="skills-list">
-<li>Python, NumPy, Pandas</li>
-<li>PyTorch, TensorFlow, Hugging Face</li>
-<li>scikit-learn, XGBoost</li>
-<li>Docker, GitHub Actions, CI/CD</li>
-<li>SQL, Postgres, Data pipelines</li>
-<li>Model monitoring, explainability (SHAP/LIME)</li>
-</ul>
-</div>
-</section>
+  <main>
+    <!-- HERO / HOME -->
+    <section id="home" class="section hero">
+      <div class="container hero-inner">
+        <div class="hero-left">
+          <h1 class="title">Hi, I’m <span class="accent">Omkar</span></h1>
+          <p class="subtitle">AI Engineer building production-ready ML systems • Model interpretability • Data pipelines • Deployments</p>
 
+          <div class="cta">
+            <a class="btn" href="#projects">View Projects</a>
+            <a class="btn ghost" href="mailto:youremail@example.com">Contact</a>
+          </div>
 
-<!-- CERTIFICATES -->
-<section id="certificates" class="section">
-<div class="container">
-<h2>Certificates</h2>
-<p class="section-sub">Relevant certifications & courses (replace with yours).</p>
+          <ul class="meta">
+            <li><strong>Location:</strong> Thane, India</li>
+            <li><strong>Open to:</strong> Internships / Full-time</li>
+          </ul>
+        </div>
 
+        <aside class="hero-card">
+          <div class="card">
+            <img class="avatar" src="https://avatars.githubusercontent.com/u/583231?v=4" alt="Avatar">
+            <h3>Quick Contact</h3>
+            <p><a href="mailto:youremail@example.com">youremail@example.com</a></p>
+            <p>GitHub: <a href="https://github.com/aibyomkar" target="_blank">@aibyomkar</a></p>
+            <div class="socials">
+              <a href="#" target="_blank">LinkedIn</a>
+              <a href="#" target="_blank">Twitter</a>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
 
-<div class="grid cert-grid">
-<div class="cert-card">
-<h4>Google Cloud - Professional ML Engineer</h4>
-<p>Issued: 2025</p>
-<a href="#" target="_blank">Verify</a>
-</div>
+    <!-- PROJECTS -->
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Projects</h2>
+          <p class="section-sub">Selected AI & ML projects — click a card for details.</p>
+        </div>
 
+        <div class="grid projects-grid">
+          <article class="project-card" data-title="Image Classifier" data-desc="A lightweight image classifier using transfer learning (MobileNet). Deployed with Flask and Docker." data-links='[{"label":"Code","url":"#"},{"label":"Demo","url":"#"}]'>
+            <div class="project-media"></div>
+            <div class="project-body">
+              <h3>Image Classifier</h3>
+              <p class="muted">Transfer learning • TensorFlow • Flask • Docker</p>
+            </div>
+          </article>
 
-<div class="cert-card">
-<h4>DeepLearning.AI - TensorFlow Developer</h4>
-<p>Issued: 2024</p>
-<a href="#" target="_blank">Verify</a>
-</div>
+          <article class="project-card" data-title="Fraud Detection" data-desc="End-to-end fraud detection pipeline with feature engineering, monitoring, and CI/CD." data-links='[{"label":"Code","url":"#"},{"label":"Slides","url":"#"}]'>
+            <div class="project-media"></div>
+            <div class="project-body">
+              <h3>Fraud Detection Pipeline</h3>
+              <p class="muted">Feature store • Model monitoring • CI</p>
+            </div>
+          </article>
 
+          <article class="project-card" data-title="NLP Summarizer" data-desc="Transformer summarizer with LIME/SHAP explainability and a Streamlit demo." data-links='[{"label":"Code","url":"#"},{"label":"Demo","url":"#"}]'>
+            <div class="project-media"></div>
+            <div class="project-body">
+              <h3>NLP Summarizer</h3>
+              <p class="muted">Transformers • Hugging Face • Explainability</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
 
-<div class="cert-card">
-<h4>Coursera - Machine Learning</h4>
-<p>Andrew Ng — Completed</p>
-<a href="#" target="_blank">Verify</a>
-</div>
-</div>
-</div>
-</section>
-</main>
+    <!-- SKILLS -->
+    <section id="skills" class="section light">
+      <div class="container">
+        <div class="section-head">
+          <h2>Skills</h2>
+          <p class="section-sub">Technologies and tools I use regularly.</p>
+        </div>
 
+        <div class="skills-grid">
+          <div class="skill">
+            <h4>Machine Learning</h4>
+            <div class="bar"><div style="--pct:90%">90%</div></div>
+            <p class="muted">PyTorch • TensorFlow • scikit-learn</p>
+          </div>
 
-<footer class="site-footer">
-<div class="container">
-<small>© Omkar Potdar — Built with ❤️ • <a href="https://github.com/aibyomkar" target="_blank">GitHub</a></small>
-</div>
-</footer>
+          <div class="skill">
+            <h4>Data Engineering</h4>
+            <div class="bar"><div style="--pct:75%">75%</div></div>
+            <p class="muted">SQL • Airflow • ETL</p>
+          </div>
 
+          <div class="skill">
+            <h4>Deployment</h4>
+            <div class="bar"><div style="--pct:85%">85%</div></div>
+            <p class="muted">Docker • CI/CD • Flask/Streamlit</p>
+          </div>
 
-<script src="script.js"></script>
+          <div class="skill">
+            <h4>Explainability</h4>
+            <div class="bar"><div style="--pct:70%">70%</div></div>
+            <p class="muted">SHAP • LIME</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CERTIFICATES -->
+    <section id="certificates" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Certificates</h2>
+          <p class="section-sub">Replace placeholders with verify links.</p>
+        </div>
+
+        <div class="grid cert-grid">
+          <div class="cert-card">
+            <h4>Google Cloud - Professional ML Engineer</h4>
+            <p class="muted">Issued: 2025</p>
+            <a href="#">Verify</a>
+          </div>
+
+          <div class="cert-card">
+            <h4>DeepLearning.AI - TensorFlow Developer</h4>
+            <p class="muted">Issued: 2024</p>
+            <a href="#">Verify</a>
+          </div>
+
+          <div class="cert-card">
+            <h4>Coursera - Machine Learning (Andrew Ng)</h4>
+            <p class="muted">Completed</p>
+            <a href="#">Verify</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <small>© Omkar Potdar — Built with ❤️ • <a href="https://github.com/aibyomkar" target="_blank">GitHub</a></small>
+      <nav class="footer-nav"><a href="#">Privacy</a><a href="#">Terms</a></nav>
+    </div>
+  </footer>
+
+  <!-- PROJECT MODAL -->
+  <div id="projectModal" class="modal" aria-hidden="true">
+    <div class="modal-content">
+      <button class="modal-close" aria-label="Close">✕</button>
+      <h3 id="modalTitle">Project Title</h3>
+      <p id="modalDesc">Description</p>
+      <div id="modalLinks" class="modal-links"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
