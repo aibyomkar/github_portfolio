@@ -9,8 +9,6 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="bg-anim" aria-hidden="true"></div>
-
   <header class="site-header" role="banner">
     <div class="container header-row">
       <a class="brand" href="#about">Omkar Potdar</a>
@@ -32,7 +30,7 @@
     <!-- ABOUT -->
     <section id="about" class="section hero" aria-labelledby="aboutTitle">
       <div class="container hero-grid">
-        <div class="hero-text reveal">
+        <div class="hero-text">
           <h1 id="aboutTitle">Hi, I'm <span class="accent">Omkar</span></h1>
           <p class="lead">who models with Python, TensorFlow, and NLP frameworks. Proven ability to deliver end-to-end AI projects from data preprocessing to model deployment. Passionate about LLMs, computer vision, and scalable AI solutions.</p>
 
@@ -50,17 +48,15 @@
           </div>
         </div>
 
-        <aside class="hero-card reveal" aria-hidden="false">
-          <div class="card-inner glass">
+        <aside class="hero-card" aria-hidden="false">
+          <div class="card-inner">
             <img class="avatar" src="https://avatars.githubusercontent.com/u/583231?v=4" alt="Omkar avatar" />
             <h3 class="card-name">Omkar Potdar</h3>
-            <p class="muted small">AI Enthusiast — practical ML systems & deployments</p>
-
+            <p class="muted small">AI Enthusiast — focused on practical ML systems & deployments</p>
             <div class="mini-stats">
-              <div class="stat"><div class="stat-num" data-target="3">0</div><span>Projects</span></div>
-              <div class="stat"><div class="stat-num" data-target="7">0</div><span>Certifications</span></div>
+              <div><strong>3</strong><span>Projects</span></div>
+              <div><strong>7+</strong><span>Certifications</span></div>
             </div>
-
             <a class="btn outline small" href="resume.pdf" target="_blank" rel="noopener">Download Resume</a>
           </div>
         </aside>
@@ -70,7 +66,7 @@
     <!-- PROJECTS -->
     <section id="projects" class="section" aria-labelledby="projectsTitle">
       <div class="container">
-        <div class="section-head reveal">
+        <div class="section-head">
           <h2 id="projectsTitle">Projects</h2>
           <p class="section-sub">AI/ML projects — click a card to view a short summary.</p>
         </div>
@@ -83,10 +79,6 @@
             <div class="project-body">
               <h3>AI Trip Planner</h3>
               <p class="muted">Itinerary generation • Optimization • Conversational UI</p>
-              <div class="project-actions">
-                <button class="ghost small">Preview</button>
-                <button class="ghost small" data-open="modal">Details</button>
-              </div>
             </div>
           </article>
 
@@ -97,10 +89,6 @@
             <div class="project-body">
               <h3>Multi-Agentic RAG AI</h3>
               <p class="muted">RAG • Agent orchestration • Explainability</p>
-              <div class="project-actions">
-                <button class="ghost small">Preview</button>
-                <button class="ghost small" data-open="modal">Details</button>
-              </div>
             </div>
           </article>
 
@@ -111,10 +99,6 @@
             <div class="project-body">
               <h3>Rainfall Prediction</h3>
               <p class="muted">Time-series • LSTM/Transformer • Deployment</p>
-              <div class="project-actions">
-                <button class="ghost small">Preview</button>
-                <button class="ghost small" data-open="modal">Details</button>
-              </div>
             </div>
           </article>
         </div>
@@ -124,12 +108,12 @@
     <!-- CERTIFICATIONS -->
     <section id="certifications" class="section light" aria-labelledby="certificationsTitle">
       <div class="container">
-        <div class="section-head reveal">
+        <div class="section-head">
           <h2 id="certificationsTitle">Certifications</h2>
           <p class="section-sub">Selected academic & professional achievements</p>
         </div>
 
-        <div class="grid cert-grid reveal">
+        <div class="grid cert-grid">
           <div class="cert-card"><h4>Google Cloud — Machine Learning Engineer (ongoing)</h4></div>
           <div class="cert-card"><h4>Masters in Data Science and Analytics with AI</h4></div>
           <div class="cert-card"><h4>1st Prize — Hackathon</h4></div>
