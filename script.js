@@ -1,40 +1,21 @@
 // Smooth scroll for internal links
 document.querySelectorAll('a[href^="#"]').forEach(a=>{
-  a.addEventListener('click', function(e){
+  a.addEventListener('click',function(e){
     const href = this.getAttribute('href');
     if(!href || href === '#') return;
     const target = document.querySelector(href);
     if(target){
       e.preventDefault();
       target.scrollIntoView({behavior:'smooth',block:'start'});
+      // close mobile nav if open
+      const nav = document.querySelector('.nav');
+      if(window.innerWidth < 980 && nav && nav.style.display === 'flex') nav.style.display = 'none';
+      document.querySelector('.menu-toggle')?.setAttribute('aria-expanded','false');
     }
   });
 });
 
-// Theme toggle (swap a few variables)
-const themeToggle = document.getElementById('themeToggle');
-let dark = true;
-if(themeToggle){
-  themeToggle.addEventListener('click', ()=>{
-    if(dark){
-      document.documentElement.style.setProperty('--bg','#f7fafc');
-      document.documentElement.style.setProperty('--text','#082032');
-      document.documentElement.style.setProperty('--muted','#475569');
-      themeToggle.textContent = '🌞';
-      // optional light tweaks
-      document.body.style.background = 'linear-gradient(180deg,#ffffff,#f3f7fb)';
-    } else {
-      document.documentElement.style.setProperty('--bg','#0b1220');
-      document.documentElement.style.setProperty('--text','#e9f2fb');
-      document.documentElement.style.setProperty('--muted','#9bb0c8');
-      themeToggle.textContent = '🌙';
-      document.body.style.background = 'radial-gradient(1000px 500px at 10% 10%, rgba(96,165,250,0.04), transparent), linear-gradient(180deg,#041028 0%, #071428 100%)';
-    }
-    dark = !dark;
-  });
-}
-
-// Project modal
+// Modal for projects
 const modal = document.getElementById('projectModal');
 const modalTitle = document.getElementById('modalTitle');
 const modalDesc = document.getElementById('modalDesc');
@@ -47,7 +28,7 @@ function openModal(title, desc, links){
   modalLinks.innerHTML = '';
   (links || []).forEach(l=>{
     const a = document.createElement('a');
-    a.href = l.url; a.textContent = l.label; a.target = '_blank'; a.rel='noopener';
+    a.href = l.url; a.textContent = l.label; a.target = '_blank'; a.rel = 'noopener';
     modalLinks.appendChild(a);
   });
   modal.setAttribute('aria-hidden','false');
@@ -56,13 +37,15 @@ function openModal(title, desc, links){
 function closeModal(){ modal.setAttribute('aria-hidden','true'); document.body.style.overflow = ''; }
 
 document.querySelectorAll('.project-card').forEach(card=>{
-  card.addEventListener('click', ()=>{
+  card.addEventListener('click', ()=> {
     const title = card.dataset.title || 'Project';
     const desc = card.dataset.desc || '';
     let links = [];
     try{ links = JSON.parse(card.dataset.links || '[]'); } catch(e){ links = []; }
     openModal(title, desc, links);
   });
+  // allow Enter key to open modal when focused
+  card.addEventListener('keydown', (e)=>{ if(e.key === 'Enter') card.click(); });
 });
 modalClose?.addEventListener('click', closeModal);
 modal.addEventListener('click', (e)=>{ if(e.target === modal) closeModal(); });
@@ -72,11 +55,24 @@ const menuToggle = document.querySelector('.menu-toggle');
 const nav = document.querySelector('.nav');
 menuToggle?.addEventListener('click', ()=>{
   if(!nav) return;
-  if(nav.style.display === 'flex') nav.style.display = 'none';
-  else nav.style.display = 'flex';
+  const open = nav.style.display === 'flex';
+  nav.style.display = open ? 'none' : 'flex';
+  nav.style.flexDirection = 'column';
+  nav.style.gap = '8px';
+  menuToggle.setAttribute('aria-expanded', String(!open));
 });
 
 // Accessibility: show focus outlines after keyboard navigation
 document.addEventListener('keyup', (e)=>{
   if(e.key === 'Tab') document.body.classList.add('user-is-tabbing');
+});
+
+// small improvement: replace dead repo/demo links text if "#"
+document.querySelectorAll('.project-card').forEach(card=>{
+  try {
+    const links = JSON.parse(card.dataset.links || '[]');
+    links.forEach(l=>{
+      if(l.url === '#') l.url = '#'; // leave placeholder, but could be replaced later
+    });
+  } catch(e){}
 });

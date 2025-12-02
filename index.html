@@ -9,86 +9,96 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header class="site-header">
+  <header class="site-header" role="banner">
     <div class="container header-row">
       <a class="brand" href="#about">Omkar Potdar</a>
 
       <nav class="nav" aria-label="Primary navigation">
-        <a href="#about">About me</a>
+        <a href="#about">About</a>
         <a href="#projects">Projects</a>
-        <a href="#certifications">Professional Certifications</a>
+        <a href="#certifications">Certifications</a>
       </nav>
 
       <div class="header-actions">
-        <a class="btn outline" id="resumeBtn" href="resume.pdf" target="_blank" rel="noopener">View Resume</a>
-        <button class="menu-toggle" aria-label="Open menu">☰</button>
+        <a class="btn resume" id="resumeBtn" href="resume.pdf" target="_blank" rel="noopener">View Resume</a>
+        <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
       </div>
     </div>
   </header>
 
   <main>
-    <!-- ABOUT (Home) -->
-    <section id="about" class="section hero">
+    <!-- ABOUT -->
+    <section id="about" class="section hero" aria-labelledby="aboutTitle">
       <div class="container hero-grid">
         <div class="hero-text">
-          <h1>Hi, I'm <span class="accent">Omkar</span></h1>
+          <h1 id="aboutTitle">Hi, I'm <span class="accent">Omkar</span></h1>
           <p class="lead">who models with Python, TensorFlow, and NLP frameworks. Proven ability to deliver end-to-end AI projects from data preprocessing to model deployment. Passionate about LLMs, computer vision, and scalable AI solutions.</p>
 
-          <p class="status">Fresher - open to unpaid work to gain real world experience. Comfortable remote / hybrid / in-office. Open to relocation.</p>
+          <p class="status"><strong>Fresher</strong> — open to unpaid work to gain real world experience. Comfortable remote / hybrid / in-office. Open to relocation.</p>
 
           <div class="cta-row">
-            <a class="btn" href="#projects">See Projects</a>
-            <a class="btn ghost" href="mailto:omkarpotdar42@gmail.com">Contact Me</a>
+            <a class="btn primary" href="#projects">See Projects</a>
+            <a class="btn subtle" href="mailto:omkarpotdar42@gmail.com">Contact Me</a>
           </div>
 
           <div class="contact-block">
-            <div><strong>Phone:</strong> +91-7710920272</div>
+            <div><strong>Phone:</strong> <a href="tel:+917710920272">+91-7710920272</a></div>
             <div><strong>Email:</strong> <a href="mailto:omkarpotdar42@gmail.com">omkarpotdar42@gmail.com</a></div>
-            <div><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/aibyomkar" target="_blank" rel="noopener">Click Here</a></div>
+            <div><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/aibyomkar" target="_blank" rel="noopener">linkedin.com/in/aibyomkar</a></div>
           </div>
         </div>
 
-        <aside class="hero-card">
+        <aside class="hero-card" aria-hidden="false">
           <div class="card-inner">
             <img class="avatar" src="https://avatars.githubusercontent.com/u/583231?v=4" alt="Omkar avatar" />
-            <h3>Quick Info</h3>
-            <p class="muted">AI Enthusiast (Fresher) - focused on building deployable AI/ML solutions and learning on-the-job.</p>
-            <a class="btn small" href="resume.pdf" target="_blank" rel="noopener">Download Resume</a>
+            <h3 class="card-name">Omkar Potdar</h3>
+            <p class="muted small">AI Enthusiast — focused on practical ML systems & deployments</p>
+            <div class="mini-stats">
+              <div><strong>3</strong><span>Projects</span></div>
+              <div><strong>7+</strong><span>Certifications</span></div>
+            </div>
+            <a class="btn outline small" href="resume.pdf" target="_blank" rel="noopener">Download Resume</a>
           </div>
         </aside>
       </div>
     </section>
 
     <!-- PROJECTS -->
-    <section id="projects" class="section">
+    <section id="projects" class="section" aria-labelledby="projectsTitle">
       <div class="container">
         <div class="section-head">
-          <h2>Projects</h2>
-          <p class="section-sub">AI/ML projects - click any card for details.</p>
+          <h2 id="projectsTitle">Projects</h2>
+          <p class="section-sub">AI/ML projects — click a card to view a short summary.</p>
         </div>
 
         <div class="grid projects-grid">
-          <article class="project-card" data-title="AI Trip Planner" data-desc="An intelligent travel planner that suggests itineraries using user preferences, constraints and cost optimization. Integrates simple conversational interface." data-links='[{"label":"Repo","url":"#"},{"label":"Demo","url":"#"}]'>
-            <div class="project-media pm-1"></div>
+          <article class="project-card" tabindex="0" data-title="AI Trip Planner"
+                   data-desc="Intelligent travel planner that suggests itineraries using user preferences, constraints and cost optimization. Includes POI scoring and a light conversational UI."
+                   data-links='[{"label":"Repo","url":"#"},{"label":"Demo","url":"#"}]'>
+            <div class="project-media pm-1" aria-hidden></div>
             <div class="project-body">
               <h3>AI Trip Planner</h3>
               <p class="muted">Itinerary generation • Optimization • Conversational UI</p>
             </div>
           </article>
 
-          <article class="project-card" data-title="Multi-Agent RAG AI" data-desc="A multi-agent Retrieval-Augmented-Generation system where agents coordinate to fetch context" data-links='[{"label":"Repo","url":"#"},{"label":"Demo","url":"#"}]'>
-            <div class="project-media pm-2"></div>
+          <article class="project-card" tabindex="0" data-title="Multi-Agent RAG AI"
+                   data-desc="Multi-agent Retrieval-Augmented-Generation where agents coordinate to fetch context, rerank and aggregate results for complex queries with explainability."
+                   data-links='[{"label":"Repo","url":"#"},{"label":"Demo","url":"#"}]'>
+            <div class="project-media pm-2" aria-hidden></div>
             <div class="project-body">
               <h3>Multi-Agentic RAG AI</h3>
-              <p class="muted">RAG • Multi-agent orchestration • Explainability</p>
+              <p class="muted">RAG • Agent orchestration • Explainability</p>
             </div>
           </article>
 
-          <article class="project-card" data-title="Rainfall Prediction" data-desc="Time-series rainfall prediction, includes preprocessing, baselining, and deployment-ready inference script." data-links='[{"label":"Repo","url":"#"},{"label":"Notebook","url":"#"}]'>
-            <div class="project-media pm-3"></div>
+          <article class="project-card" tabindex="0" data-title="Rainfall Prediction"
+                   data-desc="Time-series rainfall prediction using LSTM/Transformer approaches, thorough preprocessing, baselining and deployment-ready inference script."
+                   data-links='[{"label":"Repo","url":"#"},{"label":"Notebook","url":"#"}]'>
+            <div class="project-media pm-3" aria-hidden></div>
             <div class="project-body">
               <h3>Rainfall Prediction</h3>
-              <p class="muted">Time-series • Deployment-ready</p>
+              <p class="muted">Time-series • LSTM/Transformer • Deployment</p>
             </div>
           </article>
         </div>
@@ -96,56 +106,36 @@
     </section>
 
     <!-- CERTIFICATIONS -->
-    <section id="certifications" class="section light">
+    <section id="certifications" class="section light" aria-labelledby="certificationsTitle">
       <div class="container">
         <div class="section-head">
-          <h2>Certifications</h2>
-          <p class="section-sub">Professional & academic achievements</p>
+          <h2 id="certificationsTitle">Certifications</h2>
+          <p class="section-sub">Selected academic & professional achievements</p>
         </div>
 
         <div class="grid cert-grid">
-          <div class="cert-card">
-            <h4>Google Cloud — Machine Learning Engineer (ongoing)</h4>
-          </div>
-
-          <div class="cert-card">
-            <h4>Masters in Data Science and Analytics with AI</h4>
-          </div>
-
-          <div class="cert-card">
-            <h4>1st Prize — Hackathon</h4>
-          </div>
-
-          <div class="cert-card">
-            <h4>KLIC — Python Certification</h4>
-          </div>
-
-          <div class="cert-card">
-            <h4>MCA</h4>
-          </div>
-
-          <div class="cert-card">
-            <h4>BCA</h4>
-          </div>
-
-          <div class="cert-card">
-            <h4>MSCIT</h4>
-          </div>
+          <div class="cert-card"><h4>Google Cloud — Machine Learning Engineer (ongoing)</h4></div>
+          <div class="cert-card"><h4>Masters in Data Science and Analytics with AI</h4></div>
+          <div class="cert-card"><h4>1st Prize — Hackathon</h4></div>
+          <div class="cert-card"><h4>KLIC — Python Certification</h4></div>
+          <div class="cert-card"><h4>MCA</h4></div>
+          <div class="cert-card"><h4>BCA</h4></div>
+          <div class="cert-card"><h4>MSCIT</h4></div>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
+  <footer class="site-footer" role="contentinfo">
     <div class="container footer-inner">
       <small>© Omkar Potdar • Open to remote / hybrid / in-office • Open to relocation</small>
-      <nav class="footer-nav"><a href="#about">About Me</a><a href="#projects">Projects</a><a href="#certifications">Professional Certifications</a></nav>
+      <nav class="footer-nav"><a href="#about">About</a><a href="#projects">Projects</a><a href="#certifications">Certifications</a></nav>
     </div>
   </footer>
 
   <!-- Project Modal -->
   <div id="projectModal" class="modal" aria-hidden="true">
-    <div class="modal-content">
+    <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
       <button class="modal-close" aria-label="Close">✕</button>
       <h3 id="modalTitle">Title</h3>
       <p id="modalDesc">Description</p>
